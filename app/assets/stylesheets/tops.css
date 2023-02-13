@@ -1,0 +1,12 @@
+.header {
+    background-color: #be4371;
+}
+
+.logo {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.original-btn {
+    background-color: #f8f8f8;
+}

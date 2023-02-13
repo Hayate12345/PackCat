@@ -1,4 +1,5 @@
 class TopsController < ApplicationController
-  def top
+  # ! ホームページ用のメソッド
+  def home
   end
 end

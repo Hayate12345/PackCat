@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   # ! トップページのルーティング
-  get "/", to: "tops#top"
+  get "/", to: "tops#home"
 end
