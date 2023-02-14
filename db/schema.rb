@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2023_02_14_095727) do
 
   create_table "users", force: :cascade do |t|
     t.string "name", default: "", null: false
-    t.string "icon", default: ""
+    t.string "icon", default: "default.png"
     t.string "profile", default: "プロフィール未設定"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
