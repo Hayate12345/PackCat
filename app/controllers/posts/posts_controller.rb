@@ -27,6 +27,32 @@ class Posts::PostsController < ApplicationController
     end
   end
 
+  # ! 投稿を更新するメソッド (フォーム入力)
+  def edit
+    @post = Post.find(params[:post_id])
+
+    # * 投稿者でない場合リダイレクトする
+    if @post.user.id != current_user.id
+      redirect_to action: :index
+    end
+  end
+
+  # ! 投稿を更新するメソッド (DB更新)
+  def update
+    @post = Post.find(params[:post_id])
+
+    # * 投稿者でない場合リダイレクトする
+    if @post.user.id != current_user.id
+      redirect_to action: :index
+    end
+
+    if @post.update(post_params)
+      redirect_to action: :index
+    else
+      render :new
+    end
+  end
+
   private
 
   def post_params

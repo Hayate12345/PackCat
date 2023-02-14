@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get "posts", to: "posts/posts#index"
   get "posts/new", to: "posts/posts#new"
   post "posts/create", to: "posts/posts#create"
+  get "posts/edit/:post_id", to: "posts/posts#edit"
+  patch "posts/update/:post_id", to: "posts/posts#update"
 end

@@ -7,6 +7,7 @@ class Post < ApplicationRecord
   validates :content, presence: true
   validates :image, presence: true
   validates :amount, presence: true
+  validates :place, presence: true
 
   # ! 画像投稿用の定義
   mount_uploader :image, ImageUploader
