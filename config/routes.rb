@@ -4,4 +4,7 @@ Rails.application.routes.draw do
 
   # ! トップページのルーティング
   root to: "tops#home"
+
+  # ! 投稿機能のルーティング
+  get "posts", to: "posts/posts#index"
 end
