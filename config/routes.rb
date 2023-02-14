@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   # ! 投稿機能のルーティング
   get "posts", to: "posts/posts#index"
+  get "posts/new", to: "posts/posts#new"
+  post "posts/create", to: "posts/posts#create"
 end
