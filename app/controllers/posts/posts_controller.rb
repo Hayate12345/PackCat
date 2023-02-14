@@ -5,7 +5,7 @@ class Posts::PostsController < ApplicationController
 
   # ! 投稿された投稿一覧を取得するメソッド
   def index
-    @posts = Post.all
+    @posts = Post.all.order(created_at: "DESC")
   end
 
   # ! 新規投稿するメソッド (フォーム入力)
