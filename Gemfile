@@ -6,6 +6,9 @@ ruby '3.1.0'
 # ! 会員登録、ログイン用のGem
 gem 'devise'
 
+# ! 日本語化用のGem
+gem 'devise-i18n'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.7', '>= 6.1.7.1'
 # Use sqlite3 as the database for Active Record
