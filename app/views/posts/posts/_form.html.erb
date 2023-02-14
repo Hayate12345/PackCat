@@ -18,5 +18,9 @@
   <div class="mb-3">
     <%= form.text_field :place, class: "form-control", placeholder: "ゴミ拾いした場所　例）神戸市中央区" %>
   </div>
-  <%= form.submit "投稿する", class: "btn btn-success px-5" %>
+  <% if url == "/posts/create" %>
+    <%= form.submit "投稿する", class: "btn btn-success px-5" %>
+  <% else %>
+    <%= form.submit "更新する", class: "btn btn-success px-5" %>
+  <% end %>
 <% end %>
