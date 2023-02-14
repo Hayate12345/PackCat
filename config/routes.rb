@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   post "posts/create", to: "posts/posts#create"
   get "posts/edit/:post_id", to: "posts/posts#edit"
   patch "posts/update/:post_id", to: "posts/posts#update"
+  delete "posts/destroy/:post_id", to: "posts/posts#destroy"
 end
