@@ -29,7 +29,7 @@
                       <%= button_to "投稿内容を更新", "/posts/edit/#{post.id}", class: "dropdown-item", method: :get %>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">投稿内容を削除</a>
+                      <%= button_to "投稿を削除", "/posts/destroy/#{post.id}", class: "dropdown-item", method: :delete %>
                     </li>
                   </ul>
                 <% end %>

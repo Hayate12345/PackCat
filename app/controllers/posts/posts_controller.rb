@@ -53,6 +53,22 @@ class Posts::PostsController < ApplicationController
     end
   end
 
+  # ! 投稿を削除するメソッド (DB削除)
+  def destroy
+    @post = Post.find(params[:post_id])
+
+    # * 投稿者でない場合リダイレクトする
+    if @post.user.id != current_user.id
+      redirect_to action: :index
+    end
+
+    if @post.destroy
+      redirect_to action: :index
+    else
+      render action: :index
+    end
+  end
+
   private
 
   def post_params
