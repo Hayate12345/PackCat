@@ -1,1 +1,8 @@
-<%= @posts %>
+<a href="/posts/new">新規投稿</a>
+<% @posts.each do |post| %>
+  <p>
+    <%= post.content %>
+    <%= post.amount %>
+  </p>
+  <hr>
+<% end %>
