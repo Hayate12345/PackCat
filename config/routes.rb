@@ -16,4 +16,9 @@ Rails.application.routes.draw do
   # ! いいね機能のルーティング
   post "posts/like_create/:post_id", to: "posts/likes#like_create"
   delete "posts/like_destroy/:post_id", to: "posts/likes#like_destroy"
+
+  # ! コメント機能のルーティング
+  get "posts/comment/:post_id", to: "posts/comments#comment"
+  post "posts/comment/create", to: "posts/comments#create"
+  delete "posts/comment/destroy/:comment_id", to: "posts/comments#destroy"
 end

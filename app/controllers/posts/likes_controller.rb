@@ -4,9 +4,9 @@ class Posts::LikesController < ApplicationController
     @like = Like.new(post_id: params[:post_id], user_id: current_user.id)
 
     if @like.save
-      redirect_to controller: :posts, action: :index
+      redirect_to request.referer
     else
-      redirect_to controller: :posts, action: :index
+      redirect_to request.referer
     end
   end
 
@@ -15,9 +15,9 @@ class Posts::LikesController < ApplicationController
     @like = Like.find_by(post_id: params[:post_id], user_id: current_user.id)
 
     if @like.destroy
-      redirect_to controller: :posts, action: :index
+      redirect_to request.referer
     else
-      redirect_to controller: :posts, action: :index
+      redirect_to request.referer
     end
   end
 end

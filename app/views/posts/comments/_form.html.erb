@@ -1,0 +1,14 @@
+<% if @post.errors.any? %>
+  <div class="alert alert-danger" role="alert">
+    <% @post.errors.each do |error| %>
+      <strong>エラー！</strong> - <%= error.full_message %><br>
+    <% end %>
+  </div>
+<% end %>
+<%= form_with(model: @comment, url: url, local: true) do |form| %>
+  <%= form.hidden_field :post_id, {value: @post.id} %>
+  <div class="mb-3">
+    <%= form.text_area :comment, class: "form-control", placeholder: "コメント！", rows: 3, required: true %>
+  </div>
+  <%= form.submit "コメントする", class: "btn btn-success px-5" %>
+<% end %>

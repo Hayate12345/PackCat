@@ -4,4 +4,7 @@ class Comment < ApplicationRecord
   belongs_to :user
   # * postsテーブルとのアソシエーション （likesテーブルから見て、postsテーブルは1の関係）
   belongs_to :post
+
+  # ! バリデーションの定義
+  validates :comment, presence: true
 end
