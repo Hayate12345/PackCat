@@ -4,6 +4,8 @@ class Post < ApplicationRecord
   belongs_to :user
   # * likesテーブルとのアソシエーション （postsテーブルから見て、likesテーブルは多の関係）
   has_many :likes
+  # * commentsテーブルとのアソシエーション （postsテーブルから見て、commentsテーブルは多の関係）
+  has_many :comments
 
   # ! バリデーションの定義
   validates :content, presence: true
