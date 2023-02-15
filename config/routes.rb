@@ -38,4 +38,6 @@ Rails.application.routes.draw do
   # ! いいね機能（イベント）のルーティング
   post "events/like_create/:event_id", to: "events/interests#like_create"
   delete "events/like_destroy/:event_id", to: "events/interests#like_destroy"
+
+  # ! お問い合わせ機能のルーティング
 end
