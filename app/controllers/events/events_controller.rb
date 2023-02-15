@@ -47,6 +47,22 @@ class Events::EventsController < ApplicationController
     end
   end
 
+  # ! イベント投稿を削除するメソッド
+  def destroy
+    @event = Event.find(params[:event_id])
+
+    # * 投稿者でない場合リダイレクトする
+    if @event.user.id != current_user.id
+      redirect_to action: :index
+    end
+
+    if @event.destroy
+      redirect_to action: :index
+    else
+      redirect_to action: :index
+    end
+  end
+
   private
 
   def event_params
