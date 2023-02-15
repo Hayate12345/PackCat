@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   # ! 固定ページのルーティング
-  root to: "tops#home"
+  root to: "pages/tops#top"
 
   # ! 投稿機能のルーティング
   get "posts", to: "posts/posts#index"
