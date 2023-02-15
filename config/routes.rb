@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # ! 会員登録機能、ログイン機能のルーティング
   devise_for :users
 
-  # ! トップページのルーティング
+  # ! 固定ページのルーティング
   root to: "tops#home"
 
   # ! 投稿機能のルーティング
@@ -21,4 +21,7 @@ Rails.application.routes.draw do
   get "posts/comment/:post_id", to: "posts/comments#comment"
   post "posts/comment/create", to: "posts/comments#create"
   delete "posts/comment/destroy/:comment_id", to: "posts/comments#destroy"
+
+  # ! プロフィール機能のルーティング
+  get "profiles/:user_id", to: "profiles/profiles#show"
 end
