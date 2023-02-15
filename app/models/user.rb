@@ -11,6 +11,8 @@ class User < ApplicationRecord
   has_many :events
   # * likesテーブルとのアソシエーション （usersテーブルからみて、likesテーブルは多の関係)
   has_many :likes
-  # * commentsテーブルとのアソシエーション （postsテーブルから見て、commentsテーブルは多の関係）
+  # * commentsテーブルとのアソシエーション （usersテーブルから見て、commentsテーブルは多の関係）
   has_many :comments
+  # * interestsテーブルとのアソシエーション （usersテーブルから見て、interestsテーブルは多の関係）
+  has_many :interests
 end
