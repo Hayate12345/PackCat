@@ -34,4 +34,8 @@ Rails.application.routes.draw do
   get "events/edit/:event_id", to: "events/events#edit"
   patch "events/update/:event_id", to: "events/events#update"
   delete "events/destroy/:event_id", to: "events/events#destroy"
+
+  # ! いいね機能（イベント）のルーティング
+  post "events/like_create/:event_id", to: "events/interests#like_create"
+  delete "events/like_destroy/:event_id", to: "events/interests#like_destroy"
 end

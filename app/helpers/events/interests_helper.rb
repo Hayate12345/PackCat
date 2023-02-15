@@ -1,0 +1,2 @@
+module Events::InterestsHelper
+end
