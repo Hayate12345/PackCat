@@ -13,11 +13,11 @@ Rails.application.routes.draw do
   patch "posts/update/:post_id", to: "posts/posts#update"
   delete "posts/destroy/:post_id", to: "posts/posts#destroy"
 
-  # ! いいね機能のルーティング
+  # ! いいね機能（投稿）のルーティング
   post "posts/like_create/:post_id", to: "posts/likes#like_create"
   delete "posts/like_destroy/:post_id", to: "posts/likes#like_destroy"
 
-  # ! コメント機能のルーティング
+  # ! コメント機能（投稿）のルーティング
   get "posts/comment/:post_id", to: "posts/comments#comment"
   post "posts/comment/create", to: "posts/comments#create"
   delete "posts/comment/destroy/:comment_id", to: "posts/comments#destroy"
@@ -26,4 +26,9 @@ Rails.application.routes.draw do
   get "profiles/:user_id", to: "profiles/profiles#show"
   get "profiles/edit/:user_id", to: "profiles/profiles#edit"
   patch "profiles/update/:user_id", to: "profiles/profiles#update"
+
+  # ! イベント機能のルーティング
+  get "events", to: "events/events#index"
+  get "events/new", to: "events/events#new"
+  post "events/create", to: "events/events#create"
 end

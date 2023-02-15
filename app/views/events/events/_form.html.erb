@@ -1,0 +1,26 @@
+<% if @event.errors.any? %>
+  <div class="alert alert-danger" role="alert">
+    <% @event.errors.each do |error| %>
+      <strong>エラー！</strong> - <%= error.full_message %><br>
+    <% end %>
+  </div>
+<% end %>
+<%= form_with(model: @event, url: url, local: true) do |form| %>
+  <div class="mb-3">
+    <%= form.text_field :title, class: "form-control", placeholder: "イベントタイトル" %>
+  </div>
+  <div class="mb-3">
+    <%= form.text_area :content, class: "form-control", placeholder: "イベントの内容", rows: 3 %>
+  </div>
+  <div class="mb-3">
+    <%= form.text_field :belongings, class: "form-control", placeholder: "持ち物" %>
+  </div>
+  <div class="mb-3">
+    <%= form.text_field :place, class: "form-control", placeholder: "開催場所　例）神戸市中央区" %>
+  </div>
+  <% if url == "/events/create" %>
+    <%= form.submit "イベントを投稿する", class: "btn btn-success px-5" %>
+  <% else %>
+    <%= form.submit "更新する", class: "btn btn-success px-5" %>
+  <% end %>
+<% end %>
