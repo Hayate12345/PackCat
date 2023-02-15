@@ -32,7 +32,7 @@
 }
 
 .post-center-content-time {
-    padding-left: 20px;
+    padding-left: 10px;
 }
 
 .post-center-content-btn {
@@ -46,4 +46,8 @@
 .post-content-image {
     padding-right: 30px;
     border-radius: 10px;
+}
+
+.post-content-comment {
+    margin-right: 30px;
 }

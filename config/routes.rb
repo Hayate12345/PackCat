@@ -12,4 +12,8 @@ Rails.application.routes.draw do
   get "posts/edit/:post_id", to: "posts/posts#edit"
   patch "posts/update/:post_id", to: "posts/posts#update"
   delete "posts/destroy/:post_id", to: "posts/posts#destroy"
+
+  # ! いいね機能のルーティング
+  post "posts/like_create/:post_id", to: "posts/likes#like_create"
+  delete "posts/like_destroy/:post_id", to: "posts/likes#like_destroy"
 end
