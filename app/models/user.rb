@@ -8,7 +8,7 @@ class User < ApplicationRecord
   # * postsテーブルとのアソシエーション (usersテーブルからみて、postsテーブルは多の関係)
   has_many :posts
   # * eventsテーブルとのアソシエーション (usersテーブルからみて、eventsテーブルは多の関係)
-  has_many :posts
+  has_many :events
   # * likesテーブルとのアソシエーション （usersテーブルからみて、likesテーブルは多の関係)
   has_many :likes
   # * commentsテーブルとのアソシエーション （postsテーブルから見て、commentsテーブルは多の関係）
