@@ -22,7 +22,10 @@
                 </button>
                 <ul class="dropdown-menu">
                   <li>
-                    <%= button_to "プロフィールを更新", "#", class: "dropdown-item", method: :get %>
+                    <%= button_to "プロフィールを更新", "/profiles/edit/#{@user.id}", class: "dropdown-item", method: :get %>
+                  </li>
+                  <li>
+                    <%= button_to "ログアウト", destroy_user_session_path, class: "dropdown-item", method: :delete %>
                   </li>
                 </ul>
               <% end %>

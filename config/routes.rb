@@ -24,4 +24,6 @@ Rails.application.routes.draw do
 
   # ! プロフィール機能のルーティング
   get "profiles/:user_id", to: "profiles/profiles#show"
+  get "profiles/edit/:user_id", to: "profiles/profiles#edit"
+  patch "profiles/update/:user_id", to: "profiles/profiles#update"
 end
