@@ -40,4 +40,6 @@ Rails.application.routes.draw do
   delete "events/like_destroy/:event_id", to: "events/interests#like_destroy"
 
   # ! お問い合わせ機能のルーティング
+  get "contacts", to: "pages/contacts#new"
+  post "contacts/create", to: "pages/contacts#create"
 end
