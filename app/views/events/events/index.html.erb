@@ -29,7 +29,7 @@
                       <%= button_to "イベント内容を更新", "/events/edit/#{event.id}", class: "dropdown-item", method: :get %>
                     </li>
                     <li>
-                      <%# <%= button_to "投稿を削除", "/posts/destroy/#{post.id}", class: "dropdown-item", method: :delete %> %>
+                      <%= button_to "イベントを削除", "/events/destroy/#{event.id}", class: "dropdown-item", method: :delete %>
                     </li>
                   </ul>
                 <% end %>
