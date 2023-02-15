@@ -8,12 +8,12 @@ body {
 
 .original-btn {
     background-color: #f8f8f8;
-    border-radius: 50px;
+    border-radius: 5px;
 }
 
 .original-btn:hover {
     background-color: #eaeaea;
-    border-radius: 50px;
+    border-radius: 5px;
 }
 
 .footer {
