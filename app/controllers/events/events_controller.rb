@@ -21,6 +21,32 @@ class Events::EventsController < ApplicationController
     end
   end
 
+  # ! イベント投稿を更新するメソッド (フォーム入力)
+  def edit
+    @event = Event.find(params[:event_id])
+
+    # * 投稿者でない場合リダイレクトする
+    if @event.user.id != current_user.id
+      redirect_to action: :index
+    end
+  end
+
+  # ! イベント投稿を更新するメソッド （DB更新）
+  def update
+    @event = Event.find(params[:event_id])
+
+    # * 投稿者でない場合リダイレクトする
+    if @event.user.id != current_user.id
+      redirect_to action: :index
+    end
+
+    if @event.update(event_params)
+      redirect_to action: :index
+    else
+      render :edit
+    end
+  end
+
   private
 
   def event_params

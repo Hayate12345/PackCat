@@ -31,4 +31,6 @@ Rails.application.routes.draw do
   get "events", to: "events/events#index"
   get "events/new", to: "events/events#new"
   post "events/create", to: "events/events#create"
+  get "events/edit/:event_id", to: "events/events#edit"
+  patch "events/update/:event_id", to: "events/events#update"
 end
