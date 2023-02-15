@@ -3,6 +3,15 @@ class Profiles::ProfilesController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @posts = Post.where(params[:user_id]).order(created_at: "DESC")
+
+    # * ユーザが拾ったゴミの総数を取得する
+    @user_amount = Post.where(user_id: params[:user_id]).sum(:amount)
+
+    # * 各投稿に紐づいたいいね数を取得し、変数に格納する
+    @user_like = 0
+    @posts.each do |post|
+      @user_like += Like.where(post_id: post.id).count
+    end
   end
 
   # ! ユーザ情報を更新するメソッド （フォーム入力）
