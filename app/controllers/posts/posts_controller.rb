@@ -1,5 +1,4 @@
 class Posts::PostsController < ApplicationController
-
   # ! ログインが必要ない処理を記述
   before_action :move_to_signed_in, except: []
 
