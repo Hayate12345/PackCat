@@ -1,0 +1,28 @@
+<div class="vh-100 d-flex align-items-center">
+  <div class="container col-lg-7 mx-auto">
+    <div class="bg-original px-5 py-5">
+      <h2 class="text-white text-center fs-4 pb-5">Contact</h2>
+      <% if @contact.errors.any? %>
+        <div class="alert alert-danger" role="alert">
+          <% @contact.errors.each do |error| %>
+            <strong>エラー！</strong> - <%= error.full_message %><br>
+          <% end %>
+        </div>
+      <% end %>
+      <%= form_with(model: @contact, url: "/contacts/create", local: true) do |f| %>
+        <div class="mb-3">
+          <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "お名前", required: true %>
+        </div>
+        <div class="mb-3">
+          <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "メールアドレス", required: true %>
+        </div>
+        <div class="mb-3">
+          <%= f.text_area :content,  class: "form-control", placeholder: "お問い合わせ内容を入力", required: true, row: 3 %>
+        </div>
+        <div class="text-center">
+          <%= f.submit "Contact", class: "btn original-btn px-5" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

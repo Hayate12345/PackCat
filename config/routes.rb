@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   # ! 固定ページのルーティング
-  root to: "tops#home"
+  root to: "pages/tops#top"
 
   # ! 投稿機能のルーティング
   get "posts", to: "posts/posts#index"
@@ -38,4 +38,8 @@ Rails.application.routes.draw do
   # ! いいね機能（イベント）のルーティング
   post "events/like_create/:event_id", to: "events/interests#like_create"
   delete "events/like_destroy/:event_id", to: "events/interests#like_destroy"
+
+  # ! お問い合わせ機能のルーティング
+  get "contacts", to: "pages/contacts#new"
+  post "contacts/create", to: "pages/contacts#create"
 end
