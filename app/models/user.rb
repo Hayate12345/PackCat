@@ -9,4 +9,6 @@ class User < ApplicationRecord
   has_many :posts
   # * likesテーブルとのアソシエーション （usersテーブルからみて、likesテーブルは多の関係)
   has_many :likes
+  # * commentsテーブルとのアソシエーション （postsテーブルから見て、commentsテーブルは多の関係）
+  has_many :comments
 end
